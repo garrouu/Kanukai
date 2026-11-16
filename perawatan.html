@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perawatan Furniture | KanuKai</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <a href="index.html" class="logo">KanuKai</a>
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#layanan">Layanan</a>
+      <a href="index.html#pengrajin">Pengrajin</a>
+      <a href="index.html#cara-kerja">Cara Kerja</a>
+    </div>
+    <div class="nav-icons"><span title="Akun">👤</span><span title="Cari">🔍</span></div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-card">
+      <small>JASA FURNITURE TERPERCAYA</small>
+      <h1>Formulir Perawatan Furniture</h1>
+      <p>Jelaskan kondisi furniturenya, pengrajin akan memberi rentang estimasi biaya.</p>
+    </div>
+  </header>
+
+  <section class="section">
+
+    <!-- Button hijau "terkirim", awalnya di hide -->
+    <div class="ok" id="sukses" style="display: none;">
+      <h2>Permintaan terkirim</h2>
+      <p>Pengrajin akan memberi rentang harga. Kamu setujui dulu sebelum mereka datang.</p>
+      <a href="index.html" class="btn">Kembali ke beranda</a>
+    </div>
+
+    <!-- FORMULIR. menjalankan kirimForm() di js/perawatan.js -->
+    <form class="form" id="form" onsubmit="kirimForm(event)">
+
+      <div class="row">
+        <div class="field">
+          <label>Furniture</label>
+          <select>
+            <option>Meja</option>
+            <option>Lemari</option>
+            <option>Rak</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Jenis perawatan</label>
+          <select>
+            <option>Perbaikan</option>
+            <option>Finishing / Pengecatan</option>
+            <option>Perawatan Permukaan</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Jenis kayu</label>
+          <!-- Customer boleh tidak tau jenis kayunya -->
+          <select>
+            <option>Tidak Tahu</option>
+            <option>Jati</option>
+            <option>Mahoni</option>
+            <option>Pinus</option>
+            <option>Plywood</option>
+            <option>Blockboard</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Kondisi furniture</label>
+        <!-- wajib diisi. keterangan -->
+        <textarea rows="4" required placeholder="Contoh: kaki meja goyang, ada bagian yang patah"></textarea>
+      </div>
+
+      <div class="field"><label>Foto atau video kondisi</label><input type="file" accept="image/*,video/*" multiple></div>
+
+      <p class="hint">Estimasi biaya berupa rentang harga, misalnya Rp300.000–Rp450.000, dan menjadi batas maksimal sementara.</p>
+
+      <button class="btn">Kirim permintaan</button>
+    </form>
+
+  </section>
+
+  <script src="js/perawatan.js"></script>
+</body>
+</html>

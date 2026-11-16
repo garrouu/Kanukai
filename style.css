@@ -1,0 +1,74 @@
+/* Design utama, untuk tampilan */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Template warna yang digunakan */
+:root{--brown:#493629;--wood:#A77B55;--cream:#EDE3D4;--soft:#F8F7F3;--green:#263C32;--white:#fff}
+
+/* menghilangkan jarak bawaan browser */
+*{box-sizing:border-box;margin:0}
+body{font-family:'Poppins',sans-serif;color:var(--brown);background:var(--soft)}
+a{color:inherit;text-decoration:none}   /* link tanpa garis bawah */
+
+/* Navbar (menu atas) */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 48px;background:var(--white);position:sticky;top:0;z-index:10}
+.logo{font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:32px;font-size:13px}
+.nav-links a:hover{color:var(--wood)}   /* warna berubah saat kursor di atas link */
+.nav-icons{display:flex;gap:16px}
+
+/*  Hero (banner besar di atas) */
+.hero{min-height:300px;display:flex;justify-content:flex-end;align-items:center;padding:40px 48px;
+  background:linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.6)),url('images/hero.jpg') center/cover,linear-gradient(135deg,#2b1f17,var(--brown))}
+.hero-card{background:var(--cream);border-radius:8px;padding:28px;max-width:420px}
+.hero-card h1{font-size:32px;line-height:1.2;margin:8px 0}
+.hero-card small{letter-spacing:2px;font-size:11px}
+.hero-card p{font-size:13px;margin-bottom:18px}
+
+/* Tombol */
+.btn{display:inline-block;background:var(--brown);color:var(--white);border:0;padding:12px 28px;font:600 12px 'Poppins';cursor:pointer;border-radius:4px}
+.btn:hover{background:var(--green)}
+
+/* halaman */
+.section{max-width:1000px;margin:0 auto;padding:48px 24px;text-align:center}
+.section h2{font-size:20px;margin-bottom:4px}
+.section>p{font-size:13px;margin-bottom:24px}
+
+/* Dua kartu layanan */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{background:var(--white);border-radius:8px;overflow:hidden;font-weight:600;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}   /* kartu naik sedikit saat disentuh kursor */
+.card .img{height:260px;background:var(--wood) center/cover}
+.card span{display:block;padding:14px}
+
+/* Kotak pengrajin */
+.craft-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left}
+.craft{background:var(--white);border-radius:6px;overflow:hidden;font-size:13px;font-weight:600}
+.craft .img{height:140px;background:#d3d3d3}
+.craft div+div{padding:10px}
+
+/* Kotak langkah cara kerja */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;font-size:13px}
+.steps div{background:var(--cream);padding:18px;border-radius:6px}
+
+/* Formulir */
+.form{background:var(--white);border-radius:8px;padding:28px;text-align:left;display:grid;gap:18px}
+.field label,.field legend{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:10px;border:1px solid var(--wood);border-radius:4px;font:14px 'Poppins';background:var(--soft)}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}   /* 3 kolom sejajar */
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opts label{border:1px solid var(--wood);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:400;cursor:pointer}
+.opts label.off{opacity:.4;cursor:not-allowed;text-decoration:line-through}   /* pilihan kayu yang tidak tersedia (pudar) */
+.hint{font-size:12px;background:var(--cream);padding:10px;border-radius:4px}
+.ok{background:var(--green);color:var(--white);padding:32px;border-radius:8px}   /* kotak hijau "terkirim" */
+.ok .btn{background:var(--cream);color:var(--brown);margin-top:16px}
+
+/* Tampilan HP (layar lebar maksimal 700px) */
+@media(max-width:700px){
+  .nav{padding:12px 16px}
+  .nav-links{display:none}
+  .hero{padding:24px 16px}
+  .cards,.steps{grid-template-columns:1fr}
+  .craft-grid{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:1fr}
+}

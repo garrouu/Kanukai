@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pembuatan Furniture | KanuKai</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <a href="index.html" class="logo">KanuKai</a>
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#layanan">Layanan</a>
+      <a href="index.html#pengrajin">Pengrajin</a>
+      <a href="index.html#cara-kerja">Cara Kerja</a>
+    </div>
+    <div class="nav-icons"><span title="Akun">👤</span><span title="Cari">🔍</span></div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-card">
+      <small>JASA FURNITURE TERPERCAYA</small>
+      <h1>Formulir Pembuatan Furniture</h1>
+      <p>Ceritakan furniture yang kamu inginkan, lalu pengrajin yang cocok akan mengajukan harga.</p>
+    </div>
+  </header>
+
+  <section class="section">
+
+    <!-- Button hijau "terkirim". awal di hide (display:none), muncul setelah form dikirim -->
+    <div class="ok" id="sukses" style="display: none;">
+      <h2>Pesanan terkirim</h2>
+      <p>Pengrajin yang cocok akan segera mengajukan penawaran harga.</p>
+      <a href="index.html" class="btn">Kembali ke beranda</a>
+    </div>
+
+    <!-- FORMULIR. menjalankan fungsi kirimForm() (ada di js/pembuatan.js) saat button kirim ditekan -->
+    <form class="form" id="form" onsubmit="kirimForm(event)">
+
+      <div class="field">
+        <label>Jenis furniture</label>
+        <!-- menjalankan ubahEstimasi() setiap pilihan diganti -->
+        <select id="jenis" onchange="ubahEstimasi()">
+          <option>Meja</option>
+          <option>Rak</option>
+          <option>Lemari</option>
+        </select>
+        <p class="hint" id="hint">Estimasi awal Meja: 14–30 hari. Pengrajin akan memberi estimasi final.</p>
+      </div>
+
+      <div class="field">
+        <label>Ukuran (cm)</label>
+        <div class="row">
+          <!--  wajib diisi -->
+          <input placeholder="Panjang" type="number" required>
+          <input placeholder="Lebar" type="number" required>
+          <input placeholder="Tinggi" type="number" required>
+        </div>
+      </div>
+
+      <fieldset class="field" style="border: 0;">
+        <legend>Jenis kayu</legend>
+        <div class="opts">
+          <!-- hanya boleh pilih satu. Nama harus sama agar jadi satu kelompok -->
+          <label><input type="radio" name="kayu" value="Jati"> Jati</label>
+          <label><input type="radio" name="kayu" value="Mahoni"> Mahoni</label>
+          <label><input type="radio" name="kayu" value="Pinus"> Pinus</label>
+          <label><input type="radio" name="kayu" value="Plywood"> Plywood</label>
+          <!-- class="off" + disabled = pilihan pudar dan tidak bisa diklik (kayu tidak tersedia) -->
+          <label class="off"><input type="radio" name="kayu" value="Blockboard" disabled> Blockboard</label>
+        </div>
+      </fieldset>
+
+      <div class="row">
+        <div class="field"><label>Warna</label><input placeholder="Contoh: natural"></div>
+        <div class="field"><label>Jumlah laci/rak</label><input type="number" min="0"></div>
+        <div class="field">
+          <label>Cara menerima</label>
+          <select>
+            <option>Pengrajin Mengantar</option>
+            <option>Customer Mengambil</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field"><label>Deskripsi dan permintaan khusus</label><textarea rows="3"></textarea></div>
+      <div class="field"><label>Foto referensi desain</label><input type="file" accept="image/*" multiple></div>
+
+      <button class="btn">Kirim pesanan</button>
+    </form>
+
+  </section>
+
+  <!-- Menghubungkan file JavaScript -->
+  <script src="js/pembuatan.js"></script>
+</body>
+</html>

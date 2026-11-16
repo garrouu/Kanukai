@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KanuKai</title>
+  <!-- Menghubungkan file CSS agar halaman punya tampilan -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--  NAVBAR (menu atas). Sama di semua halaman  -->
+  <nav class="nav">
+    <a href="index.html" class="logo">KanuKai</a>
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#layanan">Layanan</a>       <!-- #layanan = loncat ke bagian ber-id "layanan" -->
+      <a href="index.html#pengrajin">Pengrajin</a>
+      <a href="index.html#cara-kerja">Cara Kerja</a>
+    </div>
+    <div class="nav-icons"><span title="Akun">👤</span><span title="Cari">🔍</span></div>
+  </nav>
+
+  <!--  HERO (banner besar)  -->
+  <header class="hero">
+    <div class="hero-card">
+      <small>JASA FURNITURE TERPERCAYA</small>
+      <h1>Wujudkan Furniture Impianmu</h1>
+      <p>Temukan pengrajin terpercaya untuk pembuatan dan perawatan furniture sesuai kebutuhanmu.</p>
+      <a href="#layanan" class="btn">CARI PENGRAJIN</a>
+    </div>
+  </header>
+
+  <!-- LAYANAN: dua kartu, klik untuk pindah halaman ===== -->
+  <section class="section" id="layanan">
+    <h2>LAYANAN KANUKAI</h2>
+    <p>Temukan furniture sesuai kebutuhanmu</p>
+    <div class="cards">
+      <a href="pembuatan.html" class="card">
+        <div class="img" style="background-image: url('images/pembuatan.jpg')"></div>
+        <span>Pembuatan Furniture</span>
+      </a>
+      <a href="perawatan.html" class="card">
+        <div class="img" style="background-image: url('images/perawatan.jpg')"></div>
+        <span>Perawatan Furniture</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- PENGRAJIN: untuk menambah, salin satu blok <div class="craft">  -->
+  <section class="section" id="pengrajin">
+    <h2>Pengrajin Terverifikasi</h2>
+    <p>Sudah dicek identitasnya oleh admin KanuKai</p>
+    <div class="craft-grid">
+      <div class="craft"><div class="img"></div><div>Pengrajin 1</div></div>
+      <div class="craft"><div class="img"></div><div>Pengrajin 2</div></div>
+      <div class="craft"><div class="img"></div><div>Pengrajin 3</div></div>
+      <div class="craft"><div class="img"></div><div>Pengrajin 4</div></div>
+    </div>
+  </section>
+
+  <!-- CARA KERJA  -->
+  <section class="section" id="cara-kerja">
+    <h2>Cara Kerja</h2>
+    <p>Empat langkah dari ide sampai furniture jadi</p>
+    <div class="steps">
+      <div>Pilih layanan</div>
+      <div>Isi spesifikasi &amp; unggah foto</div>
+      <div>Terima penawaran pengrajin</div>
+      <div>Bayar aman lewat aplikasi</div>
+    </div>
+  </section>
+
+</body>
+</html>

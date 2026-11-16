@@ -1,0 +1,12 @@
+.git-backup/
+kanukai/
+
+# File sampah bawaan sistem operasi
+.DS_Store
+Thumbs.db
+
+# Pengaturan pribadi editor
+.vscode/
+
+# Jaga-jaga kalau suatu saat memakai npm
+node_modules/
